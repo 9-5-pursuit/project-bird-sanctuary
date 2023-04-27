@@ -1,6 +1,8 @@
 import { useState } from "react";
 
+// Define a functional component named Checkout that accepts two props:
 const Checkout = ({ setCart }) => {
+  // Define the state hook called order that is initialized to an object with the following properties:
   const [order, setOrder] = useState({
     firstName: "",
     lastName: "",
@@ -8,10 +10,12 @@ const Checkout = ({ setCart }) => {
     zip: "",
   });
 
+  // Define a handleChange function that accepts an event object and updates the order state with the appropriate property and value from the event object.
   const handleChange = (e) => {
     setOrder({ ...order, [e.target.id]: e.target.value });
   };
 
+  // Define a handleSubmit function that accepts an event object and alerts the user that they have adopted birds and resets the cart and order state.
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("You have adopted birds. Thank you!");
@@ -23,6 +27,8 @@ const Checkout = ({ setCart }) => {
       zip: "",
     });
   };
+
+  // Return a JSX element that displays a checkout form with labels and input fields for firstName, lastName, email, and zip
   return (
     <div className="Checkout">
       <h4>Checkout</h4>
