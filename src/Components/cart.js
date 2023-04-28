@@ -1,5 +1,6 @@
 import React from 'react'
 import bonusItems from '../data/bonusItems'
+import { v1 as generateUniqueID } from 'uuid'
 
 function Cart({ adopt, handleCart }) {
 
@@ -12,14 +13,13 @@ function Cart({ adopt, handleCart }) {
   else if (total >= 1000) bonus = bonusItems.slice(0, 4)
 
   return (
-
     <div className='Cart'>
       <h2>Discount: {adopt.length >= 3 ? '10' : '0'}%</h2>
       <h4>Total: ${total || '0'}</h4>
-      {adopt.length>0 && (<ol>
+      {adopt.length > 0 && (<ol>
         {
           adopt.map((item, i) => {
-            return <li key={item.id}>{item.name}: ${item.amount} <button onClick={() => handleCart(i)}>Delete</button></li>
+            return <li key={generateUniqueID()}>{item.name}: ${item.amount} <button onClick={() => handleCart(i)}>Delete</button></li>
           })
         }
       </ol>

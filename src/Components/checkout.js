@@ -4,7 +4,7 @@ function Checkout({handleCart, adopt}) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (!adopt.length) return
+    if (!adopt) return
     handleCart()
     e.target.firstName.value = ''
     e.target.lastName.value = ''

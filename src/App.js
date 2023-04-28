@@ -7,7 +7,7 @@ function App() {
   const [adopt, setAdopt] = useState([]);
 
   function handleCart(args) {
-    if (args>=0) setAdopt([...adopt].filter((item, index) => index !== args))
+    if (args >= 0) setAdopt(adopt.filter((item, index) => index !== args))
     else setAdopt([])
   }
 
@@ -19,8 +19,8 @@ function App() {
     <div className="App">
       <main>
         <aside>
-          <Cart adopt={adopt} handleCart={handleCart}/>
-          <Checkout handleCart={handleCart} adopt={adopt}/>
+          <Cart adopt={adopt} handleCart={handleCart} />
+          <Checkout handleCart={handleCart} adopt={adopt.length} />
         </aside>
         <div className="birds">
           <ul>
