@@ -16,7 +16,7 @@ function Cart({ adopt, handleCart }) {
     <div className='Cart'>
       <h2>Discount: {adopt.length >= 3 ? '10' : '0'}%</h2>
       <h4>Total: ${total || '0'}</h4>
-      {adopt.length && (<ol>
+      {adopt.length>0 && (<ol>
         {
           adopt.map((item, i) => {
             return <li key={item.id}>{item.name}: ${item.amount} <button onClick={() => handleCart(i)}>Delete</button></li>

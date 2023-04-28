@@ -5,20 +5,24 @@ function Checkout({handleCart}) {
   function handleSubmit(e) {
     e.preventDefault()
     handleCart()
+    e.target.firstName.value = ''
+    e.target.lastName.value = ''
+    e.target.email.value = ''
+    e.target.zipCode.value = null
     alert('You have adopted birds. Thank you!')
   }
   return (
     <form className='Checkout' onSubmit={handleSubmit} >
-    <label htmlFor="First Name"
+    <label htmlFor="firstName"
     >First Name</label>
     <input
-      id="First Name"
+      id="firstName"
       name="firstName"
       type="text"
       style={{ marginBottom: "1em" }} />
-    <label htmlFor="Last Name">Last Name</label>
+    <label htmlFor="lastName">Last Name</label>
     <input
-      id="Last Name"
+      id="lastName"
       name="lastName"
       type="text"
       style={{ marginBottom: "1em" }} />
@@ -33,7 +37,7 @@ function Checkout({handleCart}) {
       id="zipCode"
       name="zipCode"
       type="number"
-      min={999}
+      min={9999}
       style={{ marginBottom: "1em" }} />
     <input type="submit" />
   </form>
