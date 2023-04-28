@@ -3,7 +3,6 @@ import Cart from './Components/cart';
 import Checkout from './Components/checkout';
 import birdData from './data/birds';
 import { useState } from 'react';
-import { v1 as generateUniqueID } from 'uuid'
 function App() {
   const [adopt, setAdopt] = useState([]);
 
