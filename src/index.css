@@ -1,0 +1,73 @@
+img {
+  width: 200px;
+  height: auto;
+}
+
+body {
+  margin: 0;
+
+  color: #7d7872;
+}
+
+main {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+.form,
+.Cart {
+  text-align: center;
+  background: #ecf4f4;
+  padding: 1em;
+  padding: 0 2em;
+  display: block;
+  margin: 1em;
+  border-radius: 10px;
+  width: 100%;
+}
+button.adoptbutton,
+button {
+  margin: 0.5em;
+  background-color: azure;
+}
+
+label {
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+
+h4,
+h5 {
+  text-align: center;
+}
+
+/* .adoptbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style-type: none;
+} */
+
+.birdsinfo,
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+ul.bonuses {
+  list-style: circle;
+  display: grid;
+  grid-template-columns: 1fr;
+}
