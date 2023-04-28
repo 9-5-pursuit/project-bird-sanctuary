@@ -1,6 +1,6 @@
 import React from "react";
 import bonusItems from "../data/bonusItems";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Cart({ adoptBirds, handleRemoveBird }) {
   let totalprice = 0;
@@ -16,11 +16,14 @@ export default function Cart({ adoptBirds, handleRemoveBird }) {
   if (totalprice >= 1000) bonus = bonusItems.slice();
   //   console.log(bonus);
 
+  let discount = adoptBirds.length >= 3 ? 10 : 0;
+  let amountOff = (totalprice * discount) / 100;
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
-      <h5>Discount: {adoptBirds.length >= 3 ? 10 : 0}%</h5>
-      <h4>Total: ${totalprice}</h4>
+      <h5>Discount: {discount}%</h5>
+      <h4>Total: ${totalprice - amountOff}</h4>
       <ol>
         {adoptBirds.map((bird, index) => {
           return (

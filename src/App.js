@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <p>{JSON.stringify(adoptBirds)}</p>
+        {/* <p>{JSON.stringify(adoptBirds)}</p>  */}
         <div>
           <Cart adoptBirds={adoptBirds} handleRemoveBird={handleRemoveBird} />
         </div>
