@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Checkout({handleCart}) {
+function Checkout({handleCart, adopt}) {
 
   function handleSubmit(e) {
     e.preventDefault()
+    if (!adopt.length) return
     handleCart()
     e.target.firstName.value = ''
     e.target.lastName.value = ''

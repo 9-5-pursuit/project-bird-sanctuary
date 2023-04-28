@@ -20,7 +20,7 @@ function App() {
       <main>
         <aside>
           <Cart adopt={adopt} handleCart={handleCart}/>
-          <Checkout handleCart={handleCart}/>
+          <Checkout handleCart={handleCart} adopt={adopt}/>
         </aside>
         <div className="birds">
           <ul>
