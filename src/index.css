@@ -1,4 +1,6 @@
 img {
+  /* justify-content: center;
+  align-items: center; */
   width: 200px;
   height: auto;
 }
@@ -10,12 +12,21 @@ body {
 }
 
 main {
-  width: 85%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 2em;
+}
+
+div.cart-checkout {
+  margin: 0 auto;
+  width: 30%;
+}
+
+div.birds {
+  width: 60%;
 }
 
 .form,
@@ -28,6 +39,8 @@ main {
   margin: 1em;
   border-radius: 10px;
   width: 100%;
+  height: 100%;
+  border: 1px solid black;
 }
 button.adoptbutton,
 button {
@@ -45,11 +58,9 @@ h5 {
   text-align: center;
 }
 
-/* .adoptbutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.adoptbutton {
+  width: 100%;
+}
 
 /* ul {
   display: flex;
@@ -58,16 +69,28 @@ h5 {
   align-items: flex-start;
   list-style-type: none;
 } */
+.card {
+  background-color: rgb(225, 251, 250);
+  box-shadow: 2px 2px 4px black;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 50px;
+  border-radius: 2%;
+}
 
-.birdsinfo,
+.birds,
 ul {
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 20px 60px;
   list-style: none;
+  width: 90%;
 }
 
 ul.bonuses {
-  list-style: circle;
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
 }

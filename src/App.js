@@ -25,11 +25,13 @@ function App() {
     <div className="App">
       <main>
         {/* <p>{JSON.stringify(adoptBirds)}</p>  */}
-        <div>
-          <Cart adoptBirds={adoptBirds} handleRemoveBird={handleRemoveBird} />
-        </div>
-        <div>
-          <Checkout setAdoptBirds={setAdoptBirds} />
+        <div className="cart-checkout">
+          <div>
+            <Cart adoptBirds={adoptBirds} handleRemoveBird={handleRemoveBird} />
+          </div>
+          <div>
+            <Checkout setAdoptBirds={setAdoptBirds} />
+          </div>
         </div>
 
         <div className="birds">

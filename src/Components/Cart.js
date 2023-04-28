@@ -1,5 +1,6 @@
 import React from "react";
 import bonusItems from "../data/bonusItems";
+import { v1 as generateUniqueID } from "uuid";
 // import { useState } from "react";
 
 export default function Cart({ adoptBirds, handleRemoveBird }) {
@@ -27,7 +28,7 @@ export default function Cart({ adoptBirds, handleRemoveBird }) {
       <ol>
         {adoptBirds.map((bird, index) => {
           return (
-            <li key={bird.id}>
+            <li key={generateUniqueID()}>
               {bird.name}: ${bird.amount}
               <button
                 onClick={() => {
