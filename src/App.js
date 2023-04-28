@@ -1,7 +1,19 @@
+import React from "react"
+import Birdcards from "./Birdcards";
+import Checkout from "./Checkout";
+
+
+
 function App () {
+
+
+
+
+ 
   return (
     <div>
-      <h1>Hello, world!</h1>
+    <Birdcards/> 
+    <Checkout/>
     </div>
   );
 };
