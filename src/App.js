@@ -7,17 +7,21 @@ import { v1 as generateUniqueID } from 'uuid'
 function App() {
   const [adopt, setAdopt] = useState([]);
 
-  function handleBird(args) {
+  function handleCart(args) {
+    if (args>=0) setAdopt([...adopt].filter((item, index) => index !== args))
+    else setAdopt([])
+  }
 
-    setAdopt([...adopt, args].sort((a, b) => b.amount - a.amount))
+  function handleBird(args) {
+    setAdopt([...adopt, args])
   }
 
   return (
     <div className="App">
       <main>
         <aside>
-          <Cart adopt={adopt} />
-          <Checkout />
+          <Cart adopt={adopt} handleCart={handleCart}/>
+          <Checkout handleCart={handleCart}/>
         </aside>
         <div className="birds">
           <ul>

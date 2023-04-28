@@ -1,8 +1,8 @@
 import React from 'react'
 import bonusItems from '../data/bonusItems'
-import { useState } from 'react'
 
-function Cart({ adopt }) {
+function Cart({ adopt, handleCart }) {
+
   const total = adopt.reduce((prev, next) => { return prev + next.amount }, 0)
 
   var bonus = null
@@ -18,8 +18,8 @@ function Cart({ adopt }) {
       <h4>Total: ${total || '0'}</h4>
       {adopt.length && (<ol>
         {
-          adopt.map(item => {
-            return <li key={item.id}>{item.name}: ${item.amount} <button>Delete</button></li>
+          adopt.map((item, i) => {
+            return <li key={item.id}>{item.name}: ${item.amount} <button onClick={() => handleCart(i)}>Delete</button></li>
           })
         }
       </ol>

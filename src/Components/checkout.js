@@ -1,43 +1,41 @@
 import React from 'react'
 
-function Checkout() {
+function Checkout({handleCart}) {
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    handleCart()
+    alert('You have adopted birds. Thank you!')
+  }
   return (
-    <form className='form'>
-    <label htmlFor="First Name" style={{ display: "block", marginBottom: "0.5em" }}
-    ></label><input
+    <form className='Checkout' onSubmit={handleSubmit} >
+    <label htmlFor="First Name"
+    >First Name</label>
+    <input
       id="First Name"
-      name="First Name"
+      name="firstName"
       type="text"
-      
       style={{ marginBottom: "1em" }} />
-    <label htmlFor="lastName" style={{ display: "block", marginBottom: "0.5em" }}></label>
+    <label htmlFor="Last Name">Last Name</label>
     <input
       id="Last Name"
       name="lastName"
       type="text"
-    
       style={{ marginBottom: "1em" }} />
-    <label htmlFor="email" style={{ display: "block", marginBottom: "0.5em" }}></label>
+    <label htmlFor="email">Email</label>
     <input
       id="email"
       name="email"
       type="email"
       style={{ marginBottom: "1em" }} />
-    <label htmlFor="zipCode" style={{ display: "block", marginBottom: "0.5em" }}></label>
+    <label htmlFor="zipCode">Zip Code</label>
     <input
       id="zipCode"
       name="zipCode"
       type="number"
       min={999}
       style={{ marginBottom: "1em" }} />
-    {/* <label htmlFor="creditcard" style={{ display: "block", marginBottom: "0.5em" }}></label>
-    <input
-      id="creditcard"
-      name="creditcard"
-      type='text'
-      placeholder="0"
-      style={{ marginBottom: "1em" }} /> */}
-    <button style={{ width: 'min-content', display: "block" }} type="submit">SUBMIT</button>
+    <input type="submit" />
   </form>
   )
 }
