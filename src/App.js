@@ -1,9 +1,18 @@
-function App () {
+import React, { useState } from "react";
+import BirdCards from "./Components/BirdCards";
+import Cart from "./Components/Cart";
+import CheckoutForm from "./Components/CheckoutForm";
+
+function App() {
+  const [birdCard, setBirdCard] = useState([]);
+
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <BirdCards birdCard={birdCard} setBirdCard={setBirdCard} />
+      <Cart />
+      <CheckoutForm />
     </div>
   );
-};
+}
 
 export default App;
