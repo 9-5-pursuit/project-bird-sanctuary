@@ -17,6 +17,15 @@ function App () {
     currentBirds: [],
   })
 
+  setBirdCart({
+    totalPrice: 0,
+    totalBirds: 0,
+    bonusItems: [],
+    currentDiscountPercentage: 0,
+    currentDiscount: 0,
+    currentBirds: [],
+  })
+
   return (
     <div>
       <div>
