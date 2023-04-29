@@ -65,10 +65,13 @@ function CheckoutForm() {
         <label htmlFor="zipcode">
           Zip Code
           <input
-            type="number"
+            input
             id="zip"
+            type="text"
+            pattern="[0-9]{5}"
             onChange={handleUserInput}
             value={userInput.zip}
+            placeholder="Enter 5-digit zipcode..."
           />
         </label>
         <input type="submit" />
@@ -78,3 +81,6 @@ function CheckoutForm() {
 }
 
 export default CheckoutForm;
+
+// need to handle no inputs if input is wrong format
+// resetform fn needs to work better
