@@ -4,7 +4,9 @@ export default function Birds({ birdData }) {
     return (<>
         <div>
             {birdData.map((bird) => {
-                <BirdCard bird={bird} />
+                return(
+                    <BirdCard bird={bird} />
+                )
             })}
         </div>
     </>)
