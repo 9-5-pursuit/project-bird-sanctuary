@@ -1,18 +1,16 @@
 import { useState } from "react";
 
-export default function Cart({ bird }) {
+export default function Cart({ cart }) {
   return (
       <div className="Cart">
-        <p>{bird.name}</p>
-        <p>Price ${bird.amount}</p>
-        <img
-          style={{ height: "200px", width: "200px" }}
-          src={bird.img}
-          alt={bird.name}
-        />
-        <div>
-          <button>Adopt</button>
-        </div>
+        <p>Cart</p>
+        <p>Discount</p>
+        <p>Total</p>
+        <ol>
+            {cart.map((item) => (
+          <li key={item.id}>{item.name} ${item.amount}</li>
+            ))}
+        </ol>
       </div>
   );
 }

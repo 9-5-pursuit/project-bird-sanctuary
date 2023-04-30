@@ -1,25 +1,31 @@
 import { useState } from "react";
 import birdData from "./data/birds.js";
 import BirdDetails from "./Components/BirdDetails.js";
-
-// import Cart from "./Components/Cart";
+import Cart from "./Components/Cart";
 // import Checkout from "./Components/Checkout";
 
 function App () {
   const [birds, setBirds] = useState(birdData);
+  const [cart, setCart] = useState([]);
 
-  return (
+  const addToCart = (bird) => {
+    setCart([...cart, bird]);
+  };
+
+   return (
     <div>
-    <ul>
-      {birds.map((bird) => {
-         return (
-          <BirdDetails
-            key={bird.id}
-            bird={bird}
-          />
-        );
-      })}
-    </ul>
+      <Cart cart={cart} />
+      <ul>
+        {birds.map((bird) => {
+          return (
+            <BirdDetails
+              key={bird.id}
+              bird={bird}
+              addToCart={addToCart}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };
