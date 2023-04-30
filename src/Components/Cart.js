@@ -41,7 +41,7 @@ function Cart({ birdCard, setBirdCard }) {
       <ol>
         {birdCard.map((bird, i) => {
           return (
-            <li>
+            <li key={bird.id}>
               {bird.name}: ${bird.amount}
               <button onClick={() => removeBird(i)}>Remove</button>
             </li>
@@ -51,7 +51,7 @@ function Cart({ birdCard, setBirdCard }) {
       <p>Your donation has qualified for the following items</p>
       <ul>
         {bonusGiven.map((b) => {
-          return <li>{b}</li>;
+          return <li id="prizes">{b}</li>;
         })}
       </ul>
     </div>

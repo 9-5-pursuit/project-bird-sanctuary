@@ -21,22 +21,24 @@ function CheckoutForm() {
       firstName: "",
       lastName: "",
       email: "",
-      zipcode: "", // zipcode not clearing
+      zipcode: "",
     });
   }
 
   function completeCheckout(event) {
     // event.preventDefault();
-    alert("you have adopted bird(s). Thank you!");
+    alert("You have adopted birds. Thank you!");
     resetForm();
   }
 
   return (
     <div className="Checkout">
-      <h2>Checkout</h2>
+      <h3>Checkout</h3>
+      <br />
       <form onSubmit={completeCheckout}>
         <label htmlFor="firstName">
           First Name
+          <br />
           <input
             type="text"
             id="firstName"
@@ -46,6 +48,7 @@ function CheckoutForm() {
         </label>
         <label htmlFor="lastName">
           Last Name
+          <br />
           <input
             type="text"
             id="lastName"
@@ -55,6 +58,7 @@ function CheckoutForm() {
         </label>
         <label htmlFor="email">
           Email
+          <br />
           <input
             type="email"
             id="email"
@@ -62,18 +66,20 @@ function CheckoutForm() {
             value={userInput.email}
           />
         </label>
-        <label htmlFor="zipcode">
+        <label htmlFor="zip">
           Zip Code
+          <br />
           <input
             input
+            type="number"
             id="zip"
-            type="text"
             pattern="[0-9]{5}"
             onChange={handleUserInput}
             value={userInput.zip}
             placeholder="Enter 5-digit zipcode..."
           />
         </label>
+        <br />
         <input type="submit" />
       </form>
     </div>
@@ -81,6 +87,3 @@ function CheckoutForm() {
 }
 
 export default CheckoutForm;
-
-// need to handle no inputs if input is wrong format
-// resetform fn needs to work better

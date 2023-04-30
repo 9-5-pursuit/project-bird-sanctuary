@@ -1,0 +1,81 @@
+/* color scheme inspired by my mothers pet birds */
+
+.birdSanctuary {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(2, 2fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+/* BIRD ADOPTION SIDE */
+.birds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 2 / 4;
+  grid-row: 1 / 4;
+}
+
+.eachCard {
+  background-color: rgb(117, 203, 254);
+  border: 5px solid rgb(2, 74, 191);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 1 / 3;
+  margin: 5px;
+}
+
+.card {
+  background-color: rgb(8, 162, 239);
+  border: 5px solid rgb(2, 74, 191);
+  color: white;
+  display: grid;
+  font-weight: 600;
+  list-style: none;
+  margin: 12px;
+  text-align: center;
+}
+
+#adoptButton {
+  background-color: rgb(2, 74, 191);
+  border: 3px solid rgb(117, 203, 254);
+  color: white;
+}
+
+/* CART & CHECKOUT SIDE */
+h1,
+h2,
+h3,
+h4 {
+  background-color: antiquewhite;
+  border: 5px solid white;
+  margin: 12px;
+  padding: 5px;
+}
+
+.Cart {
+  background-color: rgb(251, 244, 52);
+  border: 5px solid rgb(181, 181, 5);
+  display: grid;
+  margin: 10px;
+  padding: 50px;
+  text-align: center;
+}
+
+.Checkout {
+  background-color: rgb(251, 244, 52);
+  border: 5px solid rgb(181, 181, 5);
+  margin: 10px;
+  padding: 50px;
+  text-align: center;
+}
+
+#prizes {
+  background-color: rgb(241, 241, 82);
+  border: 5px solid white;
+}
+
+img {
+  width: 195px;
+  height: 175px;
+}

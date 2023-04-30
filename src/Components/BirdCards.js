@@ -7,8 +7,8 @@ function BirdCards({ birdCard, setBirdCard }) {
   }
 
   return (
-    <div className="birdCards">
-      <ul className="eachBirdCard">
+    <div className="birds">
+      <ul className="eachCard">
         {birds.map((bird) => (
           <li key={bird.id} className="card">
             {bird.name}
