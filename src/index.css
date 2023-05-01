@@ -1,0 +1,52 @@
+body {
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 100px);
+}
+
+.cart-container {
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.checkout-container {
+  text-align: center;
+  border: 1px solid black; 
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.bird-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(171, 209, 209);
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.adoptButton {
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .bird-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
