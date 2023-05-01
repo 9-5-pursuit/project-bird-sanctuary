@@ -1,7 +1,6 @@
 import React from "react";
 import bonusItems from "../data/bonusItems";
 import { v1 as generateUniqueID } from "uuid";
-// import { useState } from "react";
 
 export default function Cart({ adoptBirds, handleRemoveBird }) {
   let totalprice = 0;
