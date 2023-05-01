@@ -1,4 +1,9 @@
 import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems";
+import React, { useState } from "react";
+import Birds from "./Components/Birds";
+import Checkout from "./Components/Checkout";
+import Cart from "./Components/Cart";
 
 function App() {
   console.log(birdData);
@@ -13,52 +18,24 @@ function App() {
       <div className="Card">
         <ul>
           {birdData.map((bird) => {
-            return (
-              <li className="Card" key={bird.id} alt="">
-                <h2>{bird.name}</h2>
-                <p>{bird.amount}</p>
-                <img src={bird.img} />
-
-                <button>Adopt</button>
-              </li>
-            );
+            return (<Birds key={bird.id} bird={bird} />);
+            
           })}
         </ul>
       </div>
       <div className="Cart">
-        <h2>Cart</h2>
-        <h4>Discount: 0</h4>
-        <h4>Total: $0</h4>
-        <ol></ol>
-        <p></p>
-        <ul className="Bonus"></ul>
+        <Cart />
       </div>
       <div className="Checkout">
-        <h2>Checkout</h2>
-        <form>
-          <label htmlFor="firstName"> First Name</label>
-          <input type="text" id="firstName" />
-
-          <label htmlFor="lastName"> Last Name</label>
-          <input type="text" id="lastName" />
-
-          <label htmlFor="email"> Email </label>
-          <input type="email" id="email" />
-
-          <label htmlFor="zipcode"> Zip code</label>
-          <input type="text" id="zipcode" />
-          <br></br>
-
-          <input type="submit" onClick={handleSubmit} />
-        </form>
+        <Checkout handleSubmit={handleSubmit} />
       </div>
     </div>
   );
 }
 
 export default App;
-{
-  /**
+
+/**
    
 
 
@@ -115,4 +92,3 @@ Bird adoption info
 
 
 */
-}
