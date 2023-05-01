@@ -7,6 +7,7 @@ export default function Cart({ cart, birdData, bonusItems, deleteFromCart }) {
       const bird = birdData.find((b) => b.id === item.id);
       totalPrice += bird.amount;
     }
+  
     // Apply discount if there are 3 or more birds in the cart
     if (cart.length >= 3) {
       totalPrice *= 0.9;
@@ -16,10 +17,11 @@ export default function Cart({ cart, birdData, bonusItems, deleteFromCart }) {
 
   function calculateBonuses(totalPrice) {
     let bonuses = [];
-    if (totalPrice >= 100 && totalPrice <= 300) {
+    if (totalPrice >= 100 && totalPrice <= 299) {
       bonuses.push(bonusItems[0]);
     } else if (totalPrice >= 300 && totalPrice <= 500) {
       bonuses.push(...bonusItems.slice(0, 2));
+      return bonuses
     } else if (totalPrice >= 500 && totalPrice <= 1000) {
       bonuses.push(...bonusItems.slice(0, 3));
     } else if (totalPrice > 1000) {
@@ -34,7 +36,8 @@ export default function Cart({ cart, birdData, bonusItems, deleteFromCart }) {
   return (
     <div className="Cart">
       <h2>Cart</h2>
-      {cart.length >= 3 && <h4>10% discount applied!</h4>}
+      {cart.length < 3 && <h4>Discount: 0%</h4>}
+      {cart.length >= 3 && <h4>Discount: 10%</h4>}
       {cart.length > 0 && <h4>Total: ${total}</h4>}
       <ol>
         {cart.map((item, index) => (

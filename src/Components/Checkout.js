@@ -32,30 +32,30 @@ export default function Checkout({ setCart }) {
     });
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Checkout" onSubmit={handleSubmit}>
       <h2>Checkout</h2>
-      <label htmlFor="firstName">First name:</label>
+      <label htmlFor="firstName">First Name</label>
       <input
         type="text"
         value={user.firstName}
         onChange={handleTextChange}
         id="firstName"
       />
-      <label htmlFor="lastName">Last name:</label>
+      <label htmlFor="lastName">Last Name</label>
       <input
         type="text"
         value={user.lastName}
         onChange={handleTextChange}
         id="lastName"
       />
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="email">Email</label>
       <input
         type="email"
         value={user.email}
         onChange={handleTextChange}
         id="email"
       />
-      <label htmlFor="zip">Zip code:</label>
+      <label htmlFor="zip">Zip Code</label>
       <input
         type="number"
         value={user.zip}

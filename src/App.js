@@ -28,11 +28,9 @@ function App () {
        />
        {/* Pass setCart helper function to Checkout component so it can reset the cart after closing alert */}
        <Checkout setCart={setCart} />
-       <ul>
          {birdData.map((bird) => {
            return <Birds key={bird.id} bird={bird} addToCart={addToCart} />;
          })}
-       </ul>
      </div>
    );
 };
