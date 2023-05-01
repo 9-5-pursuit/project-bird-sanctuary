@@ -12,7 +12,9 @@ export default function Birds({ bird, addToCart }) {
           alt={bird.name}
         />
         <div>
-          <button onClick={() => addToCart(bird)}>Adopt</button>
+          <button className="adoptButton" onClick={() => addToCart(bird)}>
+            Adopt
+          </button>
         </div>
       </div>
     </div>

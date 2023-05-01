@@ -19,18 +19,26 @@ function App () {
   };
 
    return (
-     <div>
+     <div className="container">
+      <aside className="sidebar">
+       <div className="cart-container">
        <Cart
          cart={cart}
          birdData={birdData}
          bonusItems={bonusItems}
          deleteFromCart={deleteFromCart}
        />
+       </div>
+       <div className="checkout-container">
        {/* Pass setCart helper function to Checkout component so it can reset the cart after closing alert */}
        <Checkout setCart={setCart} />
+       </div>
+       </aside>
+       <div className="bird-container">
          {birdData.map((bird) => {
            return <Birds key={bird.id} bird={bird} addToCart={addToCart} />;
          })}
+         </div>
      </div>
    );
 };

@@ -35,15 +35,20 @@ export default function Cart({ cart, birdData, bonusItems, deleteFromCart }) {
 
   return (
     <div className="Cart">
-      <h2>Cart</h2>
+      <h3>Cart</h3>
       {cart.length < 3 && <h4>Discount: 0%</h4>}
       {cart.length >= 3 && <h4>Discount: 10%</h4>}
       {cart.length > 0 && <h4>Total: ${total}</h4>}
       <ol>
         {cart.map((item, index) => (
-          <li key={item.id}>
+          <li key={`${item.id}-${index}`}>
             {item.name} ${item.amount}
-            <button onClick={() => deleteFromCart(index, item)}>Delete</button>
+            <button
+              className="deleteButton"
+              onClick={() => deleteFromCart(index, item)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ol>

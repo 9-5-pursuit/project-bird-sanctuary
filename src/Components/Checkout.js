@@ -33,7 +33,7 @@ export default function Checkout({ setCart }) {
   }
   return (
     <form className="Checkout" onSubmit={handleSubmit}>
-      <h2>Checkout</h2>
+      <h3>Checkout</h3>
       <label htmlFor="firstName">First Name</label>
       <input
         type="text"
