@@ -1,3 +1,4 @@
+import React from "react";
 
 export default function BirdDetails({ bird, addToCart }) {
   return (
@@ -15,5 +16,3 @@ export default function BirdDetails({ bird, addToCart }) {
     </div>
   );
 }
-
-
