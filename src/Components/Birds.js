@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BirdDetails({ bird, addToCart }) {
+export default function Birds({ bird, addToCart }) {
   return (
     <div className="card">
       <p>{bird.name}</p>

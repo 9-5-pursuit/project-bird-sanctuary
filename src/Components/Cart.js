@@ -1,8 +1,7 @@
 import React from "react";
 
-export default function Cart({ cart, birdData, bonusItems }) {
-  
-    function totalPrice(cart, birdData) {
+export default function Cart({ cart, birdData, bonusItems, deleteFromCart }) {
+  function totalPrice(cart, birdData) {
     let totalPrice = 0;
     for (let item of cart) {
       const bird = birdData.find((b) => b.id === item.id);
@@ -19,14 +18,11 @@ export default function Cart({ cart, birdData, bonusItems }) {
     let bonuses = [];
     if (totalPrice >= 100 && totalPrice <= 300) {
       bonuses.push(bonusItems[0]);
-    }
-    else if (totalPrice >= 300 && totalPrice <= 500) {
+    } else if (totalPrice >= 300 && totalPrice <= 500) {
       bonuses.push(...bonusItems.slice(0, 2));
-    }
-    else if (totalPrice >= 500 && totalPrice <= 1000) {
+    } else if (totalPrice >= 500 && totalPrice <= 1000) {
       bonuses.push(...bonusItems.slice(0, 3));
-    }
-    else if (totalPrice > 1000) {
+    } else if (totalPrice > 1000) {
       bonuses.push(...bonusItems);
     }
     return bonuses;
@@ -41,9 +37,10 @@ export default function Cart({ cart, birdData, bonusItems }) {
       {cart.length >= 3 && <h4>10% discount applied!</h4>}
       {cart.length > 0 && <h4>Total: ${total}</h4>}
       <ol>
-        {cart.map((item) => (
+        {cart.map((item, index) => (
           <li key={item.id}>
             {item.name} ${item.amount}
+            <button onClick={() => deleteFromCart(index, item)}>Delete</button>
           </li>
         ))}
       </ol>
