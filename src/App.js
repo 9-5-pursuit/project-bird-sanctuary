@@ -14,7 +14,7 @@ function App () {
 
    return (
     <div>
-      <Cart cart={cart} />
+      <Cart cart={cart} birds={birds} />
       <ul>
         {birds.map((bird) => {
           return (
