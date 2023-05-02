@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Checkout({ onPurchase }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [zip, setZip] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!name || !email) {
@@ -37,6 +37,14 @@ function Checkout({ onPurchase }) {
         />
       </label>
       <br />
+      <label>
+        Zip:
+        <input
+          type="text"
+          value={zip}
+          onChange={(e) => setZip(e.target.value)}
+        />
+      </label>
       <button type="submit">Submit</button>
     </form>
   );

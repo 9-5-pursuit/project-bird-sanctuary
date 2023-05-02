@@ -26,7 +26,8 @@
   margin: 0;
   padding: 0;
 }
-button {
+.bird-button {
+  display: block;
   margin-top: 5px;
   border: 2px solid black;
   width: fit-content;

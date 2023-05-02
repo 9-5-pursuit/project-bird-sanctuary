@@ -10,7 +10,9 @@ export default function BirdCard({ birdData, addToCart }) {
 
           <img src={i.img} alt={i.name} />
 
-          <button onClick={() => addToCart(i)}>Adopt me</button>
+          <button className="bird-button" onClick={() => addToCart(i)}>
+            Adopt me
+          </button>
         </li>
       </div>
     );
