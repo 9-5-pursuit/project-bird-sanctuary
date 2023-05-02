@@ -1,18 +1,24 @@
-function Cart({ info, adoptBird }) {
-  console.log(adoptBird);
+import { useState } from "react";
+function Cart({ info, adoptBird, totalAmount }) {
+  //   console.log(adoptBird);
   //   now that it is an array we can iterate through it and m,,
   //   console.log(info); the array
   //   console.log(birds);
 
+  const [total, setTotal] = useState(totalAmount);
+
   return (
     <>
-      <p>
-        {adoptBird.slice(2).map(({ name, amount }) => (
-          <p>
-            {name}: {amount}
+      <p>Discount</p>
+      <p>Total: ${total}</p>
+      <p></p>
+      <ul>
+        {adoptBird.slice(2).map(({ name, amount }, index) => (
+          <p key={index}>
+            {name}:{amount}
           </p>
         ))}
-      </p>
+      </ul>
       <p>your donations has qualified you for the following items</p>
       <ul>
         <li>stickers</li>
