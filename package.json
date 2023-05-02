@@ -1,6 +1,7 @@
 {
   "name": "module-three-midmodule-assessment",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -12,7 +13,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/cypress open",
     "eject": "react-scripts eject"

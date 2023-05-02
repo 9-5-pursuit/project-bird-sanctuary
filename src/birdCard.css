@@ -1,0 +1,35 @@
+h5 {
+  font-size: medium;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: small;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  margin-left: 60px;
+  margin-right: auto;
+  align-self: center;
+  width: auto;
+  color: rgb(218, 223, 219);
+  background-color: rgb(102, 88, 62);
+}
