@@ -1,0 +1,54 @@
+.birds img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Card {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.label {
+  display: block;
+  margin-left: 50px;
+}
+
+.form-container {
+  margin-left: 20px;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+/* .birds {
+  display: flex;
+  flex-grow: 3;
+  justify-content: center;
+  align-items: center;
+} */
+
+#cart {
+  border: 2px solid black;
+  margin: 10px;
+  justify-content: flex-start;
+}
+#checkout {
+  border: 2px solid black;
+  margin: 10px;
+  justify-content: flex-start;
+}
+
+#side-bar {
+  flex-direction: column;
+}
+#site-container {
+  display: flex;
+}

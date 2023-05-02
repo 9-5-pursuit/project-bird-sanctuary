@@ -88,6 +88,7 @@ describe("It can total the birds in the cart", () => {
       cy.get("h4")
         .invoke("text")
         .then((text) => {
+          console.log(text);
           text = Number(text.match(/[0-9]+/g));
           console.log(text);
           return text;
