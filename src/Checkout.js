@@ -14,7 +14,7 @@ function Checkout({
     // let email = document.querySelector("#email");
     // let zip = document.querySelector("#zipCode");
     let form = document.querySelector("form");
-    if (birdsAdded) {
+    if (birdsAdded.length > 0) {
       alert("You have adopted birds. Thank you!");
 
       setBirdsAdded([]);
@@ -23,7 +23,7 @@ function Checkout({
       setBonus([]);
 
       form.reset();
-    } else {
+    } else if (birdsAdded.length === 0) {
       alert("Need to add bird(s) to cart.");
     }
   }
