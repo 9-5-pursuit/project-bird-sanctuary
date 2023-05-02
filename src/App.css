@@ -1,0 +1,33 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2, h3, h4{
+    margin: 0.5 rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+.App{
+    display: flex;
+    justify-content: space-between;
+}
+.col-1{
+    flex: 2
+}
+.col-2{
+    flex: 1
+}
+.mainblock{
+    background-color: skyblue;
+    display: grid;
+    grid-template-columns: 3(1fr);
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+img{
+    height: 250px;
+}
+aside{
+    border: 1px solid black;
+}
