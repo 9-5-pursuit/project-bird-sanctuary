@@ -1,31 +1,64 @@
 import { useState } from "react";
-function Cart({ info, adoptBird, totalAmount }) {
+import BonusItems from "./BonusItems";
+function Cart({
+  info,
+  adoptBird,
+  total,
+  discount,
+  showFirst,
+  showSecond,
+  showThird,
+  showFourth,
+  newBirdArr,
+  setAdoptBird,
+}) {
   //   console.log(adoptBird);
+  //   console.log(discount);
   //   now that it is an array we can iterate through it and m,,
   //   console.log(info); the array
   //   console.log(birds);
 
-  const [total, setTotal] = useState(totalAmount);
+  //   discount();
+
+  //   function updateDogAttendance(dogId) {
+  //     const dogArray = [...dogs];
+  //     const index = dogArray.findIndex((dog) => dogId === dog.id);
+  //     dogArray[index].present = !dogArray[index].present;
+  //     setDogs(dogArray);
+  //   }
+
+  function remove(adoptBird) {
+    let sliced = adoptBird.slice(2);
+
+    const removeBird = adoptBird
+      .slice(2)
+      .filter((bird, index) => bird === adoptBird.slice(2)[index]);
+    setAdoptBird(removeBird);
+  }
 
   return (
     <>
-      <p>Discount</p>
-      <p>Total: ${total}</p>
+      <p>Discount: {discount}%</p>
+      {/* <p>{discounted}</p> */}
+      <h4>Total: ${total}</h4>
       <p></p>
-      <ul>
+      <ol>
         {adoptBird.slice(2).map(({ name, amount }, index) => (
-          <p key={index}>
+          <li key={index} className="cart">
             {name}:{amount}
-          </p>
+            <button onClick={() => remove(adoptBird)}>Remove</button>
+          </li>
         ))}
-      </ul>
+      </ol>
       <p>your donations has qualified you for the following items</p>
-      <ul>
-        <li>stickers</li>
-        <li>background</li>
-        <li>tag</li>
-        <li>invites</li>
-      </ul>
+      <BonusItems
+        adoptBird={adoptBird}
+        total={total}
+        showFirst={showFirst}
+        showSecond={showSecond}
+        showThird={showThird}
+        showFourth={showFourth}
+      />
     </>
   );
 }
