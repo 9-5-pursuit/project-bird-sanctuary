@@ -6,6 +6,11 @@
 
 .Card {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 20px;
 }
 
 .label {
@@ -13,28 +18,22 @@
   margin-left: 50px;
 }
 
-.card {
-  border: 1px solid green;
-  width: calc(
-    100% / 3 - 20px
-  ); /* 3 cards per row, each card taking up 33.33% of the container's width with 20px margin between them */
-  margin-bottom: 20px;
-}
 .form-container {
   margin-left: 20px;
 }
 
 #cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
 }
-.birds {
+/* .birds {
   display: flex;
   flex-grow: 3;
   justify-content: center;
   align-items: center;
-}
+} */
 
 #cart {
   border: 2px solid black;
