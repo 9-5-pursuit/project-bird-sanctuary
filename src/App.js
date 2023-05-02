@@ -25,10 +25,7 @@ function App() {
         <div className="birds">
           <ul>
             {birdData.map((item) => {
-
-              return (
-                <BirdCards birds={item} handleBird={handleBird} />
-              );
+            return <li key={item.id} className='card' ><BirdCards birds={item} handleBird={handleBird} /></li>
             })}
           </ul>
         </div>
