@@ -58,9 +58,6 @@ function App () {
       setBirdCart(birdCart.currentDiscountPercentage = 0)
       setBirdCart(birdCart.currentDiscount = 1)
     }
-
-    console.log(birdCart.currentDiscount)
-    console.log(birdCart.totalBirds)
   }
 
   function adoptBird(bird) {
