@@ -1,33 +1,32 @@
 import birdData from "./data/birds";
-import bonusItems from "./data/bonusItems";
+//import bonusItems from "./data/bonusItems";
 import React, { useState } from "react";
 import Birds from "./Components/Birds";
 import Checkout from "./Components/Checkout";
 import Cart from "./Components/Cart";
 
 function App() {
-  console.log(birdData);
+  const [cart, setCart] = useState([]);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("You have adopted birds.Thank you!");
+  
+  function addToCart(bird) {
+    setCart([...cart, bird]);
   }
   return (
     <div>
-      <h1>BOOOO</h1>
-      <div className="Card">
+      <h1>Bird Sanctuary</h1>
+      <div className="card birds">
         <ul>
           {birdData.map((bird) => {
-            return (<Birds key={bird.id} bird={bird} />);
-            
+            return <Birds key={bird.id} bird={bird} addToCart={addToCart} />;
           })}
         </ul>
       </div>
       <div className="Cart">
-        <Cart />
+        <Cart cart={cart} setCart={setCart} />
       </div>
       <div className="Checkout">
-        <Checkout handleSubmit={handleSubmit} />
+        <Checkout  setCart={setCart}/>
       </div>
     </div>
   );

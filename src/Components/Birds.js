@@ -1,16 +1,26 @@
-export default function Birds({ bird }) {
-  function handleAdopt(event) {
-    event.preventDefault();
-    console.log("You adopted " + bird.id);
-  }
+import React, { useState } from "react";
+
+export default function Birds({ bird, addToCart }) {
+  // const [adoptBird, setAdoptBird] = useState([
+  //   { name: "", amount: 0 },
+  //   { name: "", amount: 0 },
+  // ]);
+
+//   function handleAdopt(e) {
+//   //   e.preventDefault();
+//   //   const newBird = { name: bird.name, amount: bird.amount };
+//   //   setAdoptBird([...adoptBird, newBird]);
+//  }
+
   return (
     <>
-      <li key={bird.id} className="Card">
+      <li key={bird.id} className="card birds">
         <h5>{bird.name}</h5>
-        <p>{bird.amount}</p>
+        {/** <p>Id:{bird.id}</p> <=testing stuff*/}
+        <p>${bird.amount}</p>
         <img src={bird.img} alt={bird.name} height="100px" />
         <br />
-        <button onClick={handleAdopt}>Adopt</button>
+        <button onClick={() => addToCart(bird)}>Adopt</button>
       </li>
     </>
   );
