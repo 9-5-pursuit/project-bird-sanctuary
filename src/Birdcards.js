@@ -1,26 +1,23 @@
-import React from 'react';
-import data from './data/birds.js';
+import React, { useState }from 'react';
+import birdData from './data/birds';
 
-function Birdcards() {
+function Birdcards ({birdArray}) {
 
-    let birdArray = [];
-
-    function handleClick() {
-        for (let birdObj of data) {
-            birdArray.push[birdObj.id];
-        }
+    function handleClick(birdcardID) {
+            birdArray.push(birdData.filter(bird => bird.id === birdcardID)[0]);
     }
-
-    for (let i = 0; i < data.length; i++) {
-        return (
-            <>
-            <h3>{data[i].name}</h3>
-            <img src={data[i].img} />
-            <h4>{data[i].amount}</h4>
-            <button onClick={() => handleClick()}>Adopt</button>
-            </>
-        );
-    }
+        
+    return (birdData.map(birdcard => {
+                return (
+                <div className='card'>
+                <h3>{birdcard.name}</h3>
+                <img src={birdcard.img} alt='Bird'/>
+                <h4>{birdcard.amount}</h4>
+                <button onClick={() => handleClick()}>Adopt</button>
+                </div>
+                );
+    })
+    );
 }
 
 export default Birdcards;
