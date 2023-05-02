@@ -6,3 +6,13 @@
 .birds {
     grid-column: 2;
 }
+
+.card {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.card img {
+    max-height: 300px;
+    max-width: 200px;
+}
