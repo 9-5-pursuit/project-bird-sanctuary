@@ -1,0 +1,55 @@
+.birds img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Card {
+  margin: 20px;
+}
+
+.label {
+  display: block;
+  margin-left: 50px;
+}
+
+.card {
+  border: 1px solid green;
+  width: calc(
+    100% / 3 - 20px
+  ); /* 3 cards per row, each card taking up 33.33% of the container's width with 20px margin between them */
+  margin-bottom: 20px;
+}
+.form-container {
+  margin-left: 20px;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.birds {
+  display: flex;
+  flex-grow: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart {
+  border: 2px solid black;
+  margin: 10px;
+  justify-content: flex-start;
+}
+#checkout {
+  border: 2px solid black;
+  margin: 10px;
+  justify-content: flex-start;
+}
+
+#side-bar {
+  flex-direction: column;
+}
+#site-container {
+  display: flex;
+}
