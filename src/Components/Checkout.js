@@ -34,7 +34,7 @@ function Checkout({ resetForm }) {
 
   return (
     <div>
-      <h4>Checkout</h4>
+      <h4 className="header">Checkout</h4>
       <form onSubmit={handleOnSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input

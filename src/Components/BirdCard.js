@@ -1,9 +1,8 @@
-import React from "react";
-import { useState } from "react";
 import "../birdCard.css";
 
 function BirdCard({ bird, handleAddBird }) {
   const { name, amount, img } = bird;
+
   return (
     <>
       <div className="card" key={bird.id}>

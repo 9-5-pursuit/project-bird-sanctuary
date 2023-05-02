@@ -6,7 +6,16 @@ import birdData from "./data/birds";
 import handleAddBird from "./Components/BirdCard";
 import "./App.css";
 
-function App() {
+export default function App({ handleAddBird }) {
+  // const [birdsCarted, setBirdsCarted] = useState([]);
+
+  function reset() {
+    setBirdsCarted([]);
+  }
+
+  function handleBirdAdopt(birdsCarted) {
+    setBirdsCarted([...birdsCarted, bird]);
+  }
   return (
     <body>
       <main>
@@ -17,15 +26,15 @@ function App() {
         </div>
       </main>
       <footer>
-        <div className="cart">
-          <Cart />
+        <div className="cart-layout">
+          <Cart birdsCarted={birdsCarted} />
         </div>
-        <div className="checkout">
+        <div className="checkout-layout">
           <Checkout />
         </div>
       </footer>
     </body>
   );
 }
-
-export default App;
+console.log();
+// "I was up all night trying to get this done. I can't even focus my eyes right now and it seems I'm only going backwards. I spent the last hour fixing one error after another and have now removed abunch of the stuff that was sort of working. Now I cna't even view my app.  It's time to throw in the towel.

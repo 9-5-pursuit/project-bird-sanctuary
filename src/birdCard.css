@@ -30,4 +30,6 @@ button {
   margin-right: auto;
   align-self: center;
   width: auto;
+  color: rgb(218, 223, 219);
+  background-color: rgb(102, 88, 62);
 }

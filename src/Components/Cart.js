@@ -1,7 +1,8 @@
 import { useState } from "react";
+import "../cart.css";
+import birdsCarted from "../App.js";
 
 function discountPercent() {
-  let birdsCarted = [];
   if (birdsCarted.length > 2) {
     return 10;
   } else {
@@ -9,18 +10,24 @@ function discountPercent() {
   }
 }
 let subTotal = 0;
-let cart = 0;
+
 const cartTotal = subTotal - (subTotal / 100) * discountPercent;
 
-function Cart() {
-  console.log("sorry, I ran out of time");
+function Cart({ setAddBird }) {
+  function handleAddBird(event) {
+    event.preventDefault();
+    setAddBird([]);
+  }
+
   return (
     <>
       <div className="cart">
         <h4>Cart</h4>
       </div>
-      <h4>Discount: {discountPercent}%</h4>
-      <h4>Total: ${cartTotal}</h4>
+      <div className="discount-total">
+        <p className="increase">Discount: {discountPercent}%</p>
+        <p className="increase">Total: ${cartTotal}</p>
+      </div>
       <ol></ol>
     </>
   );
