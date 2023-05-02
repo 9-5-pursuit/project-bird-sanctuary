@@ -13,7 +13,7 @@ function Birdcards ({birdArray}) {
                 <h3>{birdcard.name}</h3>
                 <img src={birdcard.img} alt='Bird'/>
                 <h4>{birdcard.amount}</h4>
-                <button onClick={() => handleClick()}>Adopt</button>
+                <button className='birds' onClick={() => handleClick()}>Adopt</button>
                 </div>
                 );
     })
