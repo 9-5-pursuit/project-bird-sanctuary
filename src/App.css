@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-container {
+  flex: 1;
+}
+
+aside {
+  width: 30%;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
