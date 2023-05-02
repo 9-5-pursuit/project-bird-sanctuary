@@ -15,6 +15,10 @@ function App() {
   function handleCart(e) {
     setTotal((total += Number(e.target.value)));
 
+    if (birdsAdded.length >= 2) {
+      setDiscount(10);
+    }
+
     setBirdsAdded((birdsAdded) => [
       e.target.name + ` $${e.target.value}.00`,
       ...birdsAdded,
