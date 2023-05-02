@@ -11,7 +11,7 @@ function App() {
     setSelectedBirds([...selectedBirds, bird]);
   };
   const removeFromCart = (bird) => {
-    const updatedBirds = selectedBirds.filter((b) => b.id !== bird.id);
+    const updatedBirds = selectedBirds.filter((i) => i.id !== bird.id);
     setSelectedBirds(updatedBirds);
   };
 
