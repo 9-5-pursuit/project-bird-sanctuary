@@ -1,0 +1,39 @@
+main {
+  display: flex;
+}
+.Checkout {
+  padding: 5px;
+  margin: 4px;
+  height: fit-content;
+  text-align: center;
+  border: solid 1px black;
+}
+.Cart {
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid black;
+  height: fit-content;
+}
+
+.birds {
+  display: grid;
+  margin: 4px;
+  grid-template-columns: auto auto auto;
+  width: 70%;
+  justify-content: space-between;
+}
+.birds img {
+  width: 200px;
+  max-height: 300px;
+  margin: auto;
+}
+.bird {
+  text-align: center;
+  display: grid;
+  padding: 2px;
+  border: 1px solid black;
+  max-width: 400px;
+}
+button {
+  max-width: 200px;
+}
