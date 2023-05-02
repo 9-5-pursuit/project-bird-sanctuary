@@ -1,0 +1,18 @@
+main {
+  columns: 3 300px;
+  grid-row-start: 3;
+  align-self: center;
+  align-content: center;
+  margin-left: 75px;
+}
+
+footer {
+  columns: 2 510px;
+  height: 525px;
+}
+
+.bird-layout {
+  width: 1200px;
+  margin-bottom: 25px;
+  justify-content: center;
+}

@@ -1,0 +1,30 @@
+label,
+input {
+  display: block;
+}
+
+input {
+  margin: 0 auto;
+}
+
+#firstName {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#checkout-button {
+  text-align: center;
+  margin-left: 185px;
+  color: antiquewhite;
+  font-size: medium;
+}
+
+label {
+  display: block;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-weight: bold;
+}
