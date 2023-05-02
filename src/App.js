@@ -1,7 +1,35 @@
-function App () {
+import BirdCards from './Components/birdcards';
+import Cart from './Components/cart';
+import Checkout from './Components/checkout';
+import birdData from './data/birds';
+import { useState } from 'react';
+function App() {
+  const [adopt, setAdopt] = useState([]);
+
+  function handleCart(args) {
+    if (args >= 0) setAdopt(adopt.filter((item, index) => index !== args))
+    else setAdopt([])
+  }
+
+  function handleBird(args) {
+    setAdopt([...adopt, args])
+  }
+
   return (
-    <div>
-      <h1>Hello, world!</h1>
+    <div className="App">
+      <main>
+        <aside>
+          <Cart adopt={adopt} handleCart={handleCart} />
+          <Checkout handleCart={handleCart} adopt={adopt.length} />
+        </aside>
+        <div className="birds">
+          <ul>
+            {birdData.map((item) => {
+            return <li key={item.id} className='card' ><BirdCards birds={item} handleBird={handleBird} /></li>
+            })}
+          </ul>
+        </div>
+      </main>
     </div>
   );
 };
