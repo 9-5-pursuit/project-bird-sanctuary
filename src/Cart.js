@@ -1,16 +1,21 @@
 import React from 'react'
 
 
-function Cart(handleAdopt) {
+function Cart({
+    addBird,
+    birds,
+    cart
+}) {
+    
 
   return (
     <div className='cart'>
         <h2>Cart</h2>
-        <ol>
-            <li></li>
-        </ol>
         <p>Discount</p>
         <h4>Total</h4>
+        <ol>
+         <li>{cart}</li>
+        </ol>
     </div>
   )
 }

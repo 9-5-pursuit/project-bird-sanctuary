@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 
-function Birdcards({handleAdopt,birds}) {
+function Birdcards({addBird,birds}) {
 
   return (
     <div className='bird-cards'>
@@ -15,7 +15,7 @@ function Birdcards({handleAdopt,birds}) {
                                 <p>{bird.amount}</p>
                                 <img src={bird.img} alt='bird'/>
                                 <br/>
-                                <button onClick={() => handleAdopt()}>Adopt</button>
+                                <button onClick={() => addBird(bird.id)}>Adopt</button>
                             </li>
                         )
                     })}

@@ -40,36 +40,29 @@ function handleReset() {
     })
 }
 
-function handleAdopt(e) {
-  const birdsArray = [...birds];
-  const adoptedBird = birdsArray.findIndex((bird) => bird.id === e.target.id);
- 
-  // setbirds(adoptedBird)
-  console.log(adoptedBird)
-}
-
-
-
-function handleDiscount() {
+function addBird(birdID) {
+  const filteredBirds = birds.filter((bird) => bird.id === birdID)
+  .map(bird => bird.name)
+console.log(filteredBirds)
 
 }
-
  
   return (
     <div>
     <Birdcards
     birds={birds} 
-    handleAdopt={handleAdopt}/> 
+    addBird={addBird}
+    /> 
     <Checkout 
     user={user}
     handleSubmit={handleSubmit}
     handleTextChange={handleTextChange}
-    handleAdopt
+   
     />
     <Cart
     birds={birds}
     cart={cart}
-    handleAdopt={handleAdopt}
+    
     />
     </div>
   );

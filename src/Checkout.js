@@ -3,8 +3,7 @@ import React from 'react'
 function Checkout({
     user,
     handleSubmit,
-    handleTextChange,
-    handleAdopt
+    handleTextChange
 }) {
 
    return (
@@ -47,7 +46,7 @@ function Checkout({
             onChange={handleTextChange}
             />
             <br/>
-            <button onClick={handleAdopt}>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
   )
