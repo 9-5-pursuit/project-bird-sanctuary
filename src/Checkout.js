@@ -1,36 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-function Checkout() {
-    const [user, setuser] = useState({
-        firstName: "",
-        lastName: "",
-        zip: "",
-        email: "",
-    })
-    
-    function handleSubmit(e) {
-        e.preventDefault()
-        handleReset()
-    }
+function Checkout({
+    user,
+    handleSubmit,
+    handleTextChange,
+    handleAdopt
+}) {
 
-    function handleTextChange(e) {
-        setuser({
-            ...user,
-            [e.target.id]: e.target.value
-        })
-    }
-
-    function handleReset() {
-        setuser({
-            firstName: "",
-            lastName: "",
-            zip: "",
-            email: "",  
-        })
-    }
-
-
-  return (
+   return (
    <div className='checkout-section'>
     <h2>Checkout</h2>
         <form onSubmit={handleSubmit}>
@@ -70,7 +47,7 @@ function Checkout() {
             onChange={handleTextChange}
             />
             <br/>
-            <button type='submit'>Submit</button>
+            <button onClick={handleAdopt}>Submit</button>
         </form>
     </div>
   )

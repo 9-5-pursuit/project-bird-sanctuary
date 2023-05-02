@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import birdData from './data/birds'
 
-function Birdcards() {
-    const [birds, setbirds] = useState(birdData)
+
+function Birdcards({handleAdopt,birds}) {
+
   return (
     <div className='bird-cards'>
         <section>
@@ -10,12 +10,12 @@ function Birdcards() {
                 <ul>
                     {birds.map((bird) => {
                         return (
-                            <li key={bird.id}>
+                            <li className='card' key={bird.id}>
                                 <h2>{bird.name}</h2>
                                 <p>{bird.amount}</p>
                                 <img src={bird.img} alt='bird'/>
                                 <br/>
-                                <button onClick={() => false}>Adopt</button>
+                                <button onClick={() => handleAdopt()}>Adopt</button>
                             </li>
                         )
                     })}
