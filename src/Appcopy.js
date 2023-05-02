@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./index.css";
-
 import birdData from "./data/birds";
 import bonusItems from "./data/bonusItems";
 import Cart from "./Components/Cart";
@@ -21,7 +19,7 @@ function App() {
     zipCode: "",
   });
 
-  function addToCart(birdId, birdName, birdAmount) {
+  function adoptABird(birdId, birdName, birdAmount) {
     console.log(birdId, birdName, birdAmount);
     const index = birdData.findIndex((birds) => birdId === birds.id);
     setCartItems([...cartItems, { birdName }]);
@@ -50,18 +48,17 @@ function App() {
     setUser({ ...user, [e.target.id]: e.target.value });
   }
 
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   console.log(user);
+  //   setUser(user);
+  // }
+
   function handleAlert(e) {
     alert("You have adopted birds. Thank you!");
   }
 
-  function Reset(e) {
-    useState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zipCode: "",
-    });
-  }
+  function reset(e) {}
 
   function handleDeletBird(e) {
     console.log("Delete a Bird");
@@ -72,7 +69,6 @@ function App() {
       <div>
         <h1>Bird Sanctuary</h1>
       </div>
-
       {/* // -------- Cart -------- \\ */}
       <div className="Cart">
         <h2>Cart</h2>
@@ -93,7 +89,7 @@ function App() {
 
       <div className="App">
         <form onSubmit={handleAlert}>
-          {!handleAlert && Reset()}
+          {!handleAlert && reset()}
           <h2>Checkout</h2>
           <lebel>First Name</lebel>
           <br />
@@ -142,7 +138,7 @@ function App() {
         {/* // ------- Bird Card ------ \\ */}
 
         {/* */}
-        <div className="card">
+        <div className=".card">
           <section>
             <main>
               <ul>
@@ -156,7 +152,7 @@ function App() {
                       <br />
                       <button
                         onClick={() =>
-                          addToCart(bird.id, bird.name, bird.amount)
+                          adoptABird(bird.id, bird.name, bird.amount)
                         }
                       >
                         ADOPT
