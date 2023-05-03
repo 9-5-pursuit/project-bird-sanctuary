@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cartContext";
-// import { useBirdsContext } from "../context/birdsContext";
 
 const CheckoutForm = () => {
   const { clearCart } = useCartContext();
-  // const { birds } = useBirdsContext();
 
   function handleSubmit(e) {
     e.preventDefault();

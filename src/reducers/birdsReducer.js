@@ -4,9 +4,6 @@ import {
   GET_BIRDS,
   GET_BIRDS_ERROR,
   GET_BIRDS_SUCCESS,
-  GET_BIRD_BY_ID_ERROR,
-  GET_BIRD_BY_ID,
-  GET_BIRD_BY_ID_SUCCESS,
 } from "../actions";
 
 const birdsReducer = (state, action) => {
@@ -31,24 +28,6 @@ const birdsReducer = (state, action) => {
         ...state,
         birdsLoaded: false,
         birdsError: true,
-      };
-    case GET_BIRD_BY_ID:
-      return {
-        ...state,
-        singleBirdLoaded: true,
-        singleBirdError: false,
-      };
-    case GET_BIRD_BY_ID_SUCCESS:
-      return {
-        ...state,
-        singleBirdLoaded: false,
-        SingleBird: action.payload,
-      };
-    case GET_BIRD_BY_ID_ERROR:
-      return {
-        ...state,
-        singleBirdLoaded: false,
-        singleBirdError: true,
       };
     default:
       throw new Error(`No Matching "${action.type}" - action type`);
