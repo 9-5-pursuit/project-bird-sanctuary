@@ -4,6 +4,7 @@ import {
   SET_LIST_VIEW,
   UPDATE_SORT,
   SORT_BIRDS,
+  UPDATE_FILTER,
 } from "../actions";
 
 const filterReducer = (state, action) => {
@@ -33,7 +34,7 @@ const filterReducer = (state, action) => {
     };
   }
   if (action.type === SORT_BIRDS) {
-    const { sort, filteredBirds } = state;
+    const { sort, filteredBirds, text } = state;
     let sortedBirds = [...filteredBirds];
     if (sort === "price-lowest") {
       sortedBirds = sortedBirds.sort((a, b) => a.amount - b.amount);
@@ -47,7 +48,26 @@ const filterReducer = (state, action) => {
     if (sort === "name-z") {
       sortedBirds = sortedBirds.sort((a, b) => b.name.localeCompare(a.name));
     }
+    sortedBirds = sortedBirds.filter((bird) => {
+      return bird.name.toLowerCase().includes(text.toLowerCase());
+    });
     return { ...state, filteredBirds: sortedBirds };
+  }
+  if (action.type === UPDATE_FILTER) {
+    const { name, value } = action.payload;
+    console.log(name, value);
+    if (name === "text") {
+      let filteredBirds = [...state.allBirds];
+
+      if (value) {
+        filteredBirds = filteredBirds.filter((bird) => {
+          return bird.name.toLowerCase().includes(value.toLowerCase());
+        });
+      }
+
+      return { ...state, [name]: value, filteredBirds };
+    }
+    return { ...state, [name]: value };
   }
   throw new Error(`No Matching action type ${action.type}`);
 };

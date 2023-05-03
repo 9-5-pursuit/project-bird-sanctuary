@@ -6,6 +6,7 @@ import {
   SET_LIST_VIEW,
   UPDATE_SORT,
   SORT_BIRDS,
+  UPDATE_FILTER,
 } from "../actions";
 
 import { useBirdsContext } from "./birdsContext";
@@ -15,6 +16,7 @@ const initialState = {
   allBirds: [],
   gridView: true,
   sort: "price-lowest",
+  text: "",
 };
 
 const FilterContext = React.createContext();
@@ -29,7 +31,7 @@ export const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: SORT_BIRDS });
-  }, [birds, state.sort]);
+  }, [birds, state.sort, state.text]);
 
   const setGridView = () => {
     dispatch({ type: SET_GRID_VIEW });
@@ -46,9 +48,27 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: UPDATE_SORT, payload: value });
   };
 
+  const updateFilter = (e) => {
+    let value = e.target.value;
+    let name = e.target.name;
+    // console.log(name, value);
+    dispatch({ type: UPDATE_FILTER, payload: { name, value } });
+  };
+
+  const clearFilter = () => {
+    dispatch({ type: UPDATE_FILTER, payload: { name: "text", value: "" } });
+  };
+
   return (
     <FilterContext.Provider
-      value={{ ...state, setGridView, setListView, updateSort }}
+      value={{
+        ...state,
+        setGridView,
+        setListView,
+        updateSort,
+        updateFilter,
+        clearFilter,
+      }}
     >
       {children}
     </FilterContext.Provider>

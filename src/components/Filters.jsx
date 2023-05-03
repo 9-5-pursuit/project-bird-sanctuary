@@ -1,15 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useFilterContext } from "../context/filterContext";
 
 const Filters = () => {
+  const { text, updateFilter, clearFilter } = useFilterContext();
   return (
     <Wrapper>
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
-          {/* search input */}
           <div className="form-control">
-            <input type="text" placeholder="search" className="search-input" />
+            <input
+              type="text"
+              name="text"
+              placeholder="search"
+              className="search-input"
+              value={text}
+              onChange={updateFilter}
+            />
           </div>
+          <Link to="/gallery" className="btn" onClick={clearFilter}>
+            clear filter
+          </Link>
         </form>
       </div>
     </Wrapper>
@@ -18,7 +30,6 @@ const Filters = () => {
 
 const Wrapper = styled.section`
   .search-input {
-    ${"" /* padding: 0.5rem; */}
     background: var(--clr-grey-10);
     color: var(--clr-grey-5);
     border-radius: 0.25rem;

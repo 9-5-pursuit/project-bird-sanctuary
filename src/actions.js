@@ -16,3 +16,4 @@ export const CLEAR_CART = "CLEAR_CART";
 export const COUNT_CART_TOTALS = "COUNT_CART_TOTALS";
 export const UPDATE_SORT = "UPDATE_SORT";
 export const SORT_BIRDS = "SORT_BIRDS";
+export const UPDATE_FILTER = "UPDATE_FILTER";
