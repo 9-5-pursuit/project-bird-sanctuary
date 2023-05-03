@@ -19,9 +19,11 @@ const Filters = () => {
               onChange={updateFilter}
             />
           </div>
-          <Link to="/gallery" className="btn" onClick={clearFilter}>
-            clear filter
-          </Link>
+          {text && (
+            <Link to="/gallery" className="btn" onClick={clearFilter}>
+              clear filter
+            </Link>
+          )}
         </form>
       </div>
     </Wrapper>
