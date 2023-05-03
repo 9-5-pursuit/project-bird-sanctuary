@@ -1,10 +1,11 @@
 import React, { useEffect, useContext, useReducer } from "react";
 import reducer from "../reducers/filterReducer";
 import {
-  LOAD_PRODUCTS,
+  LOAD_BIRDS,
   SET_GRID_VIEW,
   SET_LIST_VIEW,
   UPDATE_SORT,
+  SORT_BIRDS,
 } from "../actions";
 
 import { useBirdsContext } from "./birdsContext";
@@ -13,7 +14,7 @@ const initialState = {
   filteredBirds: [],
   allBirds: [],
   gridView: true,
-  sort: "price_lowest",
+  sort: "price-lowest",
 };
 
 const FilterContext = React.createContext();
@@ -21,13 +22,14 @@ const FilterContext = React.createContext();
 export const FilterProvider = ({ children }) => {
   const { birds } = useBirdsContext();
   const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(() => {
-    dispatch({ type: LOAD_PRODUCTS, payload: birds });
+    dispatch({ type: LOAD_BIRDS, payload: birds });
   }, [birds]);
 
-  //   useEffect(() => {
-  //     dispatch({ type: SORT_BIRDS });
-  //   }, [birds, state.sort]);
+  useEffect(() => {
+    dispatch({ type: SORT_BIRDS });
+  }, [birds, state.sort]);
 
   const setGridView = () => {
     dispatch({ type: SET_GRID_VIEW });

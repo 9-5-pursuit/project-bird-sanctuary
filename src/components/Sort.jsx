@@ -1,6 +1,6 @@
 import React from "react";
 import { useFilterContext } from "../context/filterContext";
-import { FiGrid, FiList } from "react-icons/fi";
+import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
 
 const Sort = () => {
@@ -15,12 +15,12 @@ const Sort = () => {
   return (
     <Wrapper>
       <div className="btn-container">
-        <FiGrid
+        <BsFillGridFill
           onClick={setGridView}
           className={`${gridView ? "active" : null}`}
         />
 
-        <FiList
+        <BsList
           onClick={setListView}
           className={`${!gridView ? "active" : null}`}
         />
@@ -80,16 +80,18 @@ const Wrapper = styled.section`
     column-gap: 0.5rem;
 
     .active {
-      background: var(--clr-black);
-      color: var(--clr-white);
+      background: var(--clr-grey-1);
+      color: var(--clr-grey-9);
     }
   }
-
+  hr {
+    margin: 1rem;
+  }
   .sort-input {
     border-color: transparent;
     font-size: 1rem;
     text-transform: capitalize;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem;
   }
   label {
     font-size: 1rem;
