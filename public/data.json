@@ -1,0 +1,65 @@
+[
+    {
+      "id": 444,
+      "img": "https://images.unsplash.com/photo-1563188619-df4bb332ad8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=411&q=80",
+      "name": "Shoebill",
+      "amount": 100,
+      "description": "The Shoebill is a large bird known for its unique shoe-shaped bill. It is found in East Africa and is known for its distinctive appearance and behavior."
+    },
+    {
+      "id": 555,
+      "img": "https://images.unsplash.com/photo-1677806417616-7caa89197326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "name": "Resplendent Quetzal",
+      "amount": 200,
+      "description": "The Resplendent Quetzal is a colorful bird found in the forests of Central America. It is known for its long, iridescent green tail feathers and is considered a symbol of beauty and freedom."
+    },
+    {
+      "id": 777,
+      "img": "https://images.unsplash.com/photo-1486365227551-f3f90034a57c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "name": "Royal Flycatcher",
+      "amount": 300,
+      "description": "The Royal Flycatcher is a small bird known for its colorful plumage and elaborate crest. It is found in the rainforests of Central and South America and is known for its distinctive courtship displays."
+    },
+    {
+      "id": 1333,
+      "img": "https://i.redditmedia.com/sl3adn3eXY65Y4yNLxMRO_O4y-Pf1EYCxPuHpV34WqI.jpg?fit=crop&crop=faces%2Centropy&arh=2&w=640&s=f461fa6cd525892f85eb89268550867a",
+      "name": "Boat Billed Heron",
+      "amount": 600,
+      "description": "The Boat Billed Heron is a medium-sized heron found in the wetlands of Central and South America. It is named for its large, boat-shaped bill and is known for its stealthy hunting techniques."
+    },
+    {
+      "id": 888,
+      "img": "https://images.unsplash.com/photo-1528127110434-c2fd7f12cd6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "name": "Turaco",
+      "amount": 400,
+      "description": "The King Vulture is a large bird found in Central and South America. It has a striking appearance, with a bald, colorful head and a white body. King Vultures play an important role in cleaning up carrion and are known for their keen sense of smell in locating food."
+    },
+    {
+      "id": 1010,
+        "img": "https://images.unsplash.com/photo-1598283096194-2e0f42eb6672?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80",
+        "name": "King Vulture",
+        "amount": 500,
+        "description": "The King Vulture is a large bird found in Central and South America. It has a striking appearance, with a bald, colorful head and a white body. King Vultures play an important role in cleaning up carrion and are known for their keen sense of smell in locating food."
+      },
+      {
+        "id": 1212,
+        "img": "https://images.unsplash.com/photo-1520552159191-e28a1d9f0d7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=409&q=80",
+        "name": "Frilled Coquette Hummingbird",
+        "amount": 600,
+        "description": "The Frilled Coquette Hummingbird is a small hummingbird species found in South America. It is known for the male's colorful frilled throat feathers, which are displayed during courtship displays. These hummingbirds have a rapid wingbeat and are capable of hovering in mid-air to feed on nectar."
+      },
+      {
+        "id": 999,
+        "img": "https://images.unsplash.com/photo-1499995909106-2d6741de64ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "name": "Scarlet Macaw",
+        "amount": 1000,
+        "description": "The Scarlet Macaw is a large, colorful parrot native to the humid rainforests of Central and South America. It is known for its vibrant red, blue, and yellow feathers. Scarlet Macaws are highly intelligent birds and have a strong beak that they use to crack open nuts and seeds."
+      },
+      {
+        "id": 2424,
+        "img": "https://images.unsplash.com/photo-1620694563886-c3a80ec55f41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "name": "Yellow Warbler",
+        "amount": 700,
+        "description": "The Yellow Warbler is a small songbird found in North and Central America. It has bright yellow plumage, often with red streaks on the breast. Yellow Warblers are known for their melodic songs and their ability to migrate long distances during the breeding season."
+      }
+    ]
