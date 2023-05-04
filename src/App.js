@@ -1,23 +1,67 @@
-import birdData from "./data/birds";
-// import bonusItems from "./data/bonusItems";
-import Cart from "./Components/Cart";
-import Checkout from "./Components/Checkout";
-import React, { useState } from "react";
-import BirdCards from "./Components/BirdCards";
-console.log(birdData);
+// import birdData from "./data/birds";
+// // import bonusItems from "./data/bonusItems";
+// import Cart from "./Components/Cart";
+// import Checkout from "./Components/Checkout";
+// import React, { useState } from "react";
+// import BirdCards from "./Components/BirdCards";
+// console.log(birdData);
 
+// function App() {
+//   const [bird, setBird] = (useState = birdData);
+//   return (
+//     <div>
+//       <aside>
+//         {/* {Cart} */}
+//         <Cart />
+//         {/* {Checkout} */}
+//         <Checkout />
+//       </aside>
+//       <BirdCards bird={bird} />
+//       <main>{/* {BirdSelection} */}</main>
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React, { useState } from "react";
+import Cart from "./components/Cart";
+import Checkout from "../components/Checkout";
+import BirdsContainer from "./components/BirdsContainer";
+
+import "./App.css";
+
+// App component
 function App() {
-  const [bird, setBird] = (useState = birdData);
+  const [cartItems, setCartItems] = useState([]);
+
+  function handleAddToCart(bird) {
+    setCartItems([...cartItems, bird]);
+  }
+
+  function handleRemoveFromCart(index) {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(index, 1);
+    setCartItems(updatedCartItems);
+  }
+
+  function reset() {
+    setCartItems([]);
+  }
+
   return (
-    <div>
+    <div className="container">
       <aside>
-        {/* {Cart} */}
-        <Cart />
-        {/* {Checkout} */}
-        <Checkout />
+        <Cart
+          cartItems={cartItems}
+          handleRemoveFromCart={handleRemoveFromCart}
+        />
+        <Checkout reset={reset} />
       </aside>
-      <BirdCards bird={bird} />
-      <main>{/* {BirdSelection} */}</main>
+      <main>
+        <BirdsContainer handleAddToCart={handleAddToCart} />
+      </main>
     </div>
   );
 }
