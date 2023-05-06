@@ -76,10 +76,11 @@ import birdData from "./data/birds";
 
 
 
+
 // console.log(birdData)
 
 function App() {
-  
+
   const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
 
