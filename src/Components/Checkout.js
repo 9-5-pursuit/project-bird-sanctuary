@@ -1,6 +1,5 @@
 // import React, { useState } from "react";
 
-
 // export default function Checkout({ reset }) {
 //   const [user, setUser] = useState({
 //     firstName: "",
@@ -152,3 +151,6 @@
 //   );
 // }
 
+export default function Checkout() {
+  return <div>Hello</div>;
+}

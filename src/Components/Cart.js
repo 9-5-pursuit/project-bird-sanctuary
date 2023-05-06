@@ -4,9 +4,9 @@
 
 // Cart Component
 // export default function Cart({ cartItems, handleRemoveFromCart }) {
-  // 1. determine the discount
-  // 2. calculate the total
-  // 3. determine which bonuses to show
+// 1. determine the discount
+// 2. calculate the total
+// 3. determine which bonuses to show
 
 //   const total = cartItems.reduce(
 //     (accumulator, currentValue) => (accumulator += currentValue.amount),
@@ -59,3 +59,10 @@
 //     </div>
 //   );
 // }
+
+export default function Cart() {
+  
+  return(
+    <div>Hello</div>
+  )
+}

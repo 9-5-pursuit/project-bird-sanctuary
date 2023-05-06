@@ -68,12 +68,40 @@
 
 // export default App;
 
-import React from "react";
+import React, { useState } from "react";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+import Cards from "./Components/Card";
+import birdData from "./data/birds";
+
+
+
+// console.log(birdData)
 
 function App() {
-   return(
-<div>Hello</div>
+  
+  const [birds, setBirds] = useState(birdData);
+  const [cart, setCart] = useState([]);
 
-  )
+  const handleCart = (bird) => {
+    if (cart.includes(bird)) {
+      alert("You have already added this bird to the cart");
+      return;
+    }
+    setCart([...cart, bird]);
+  };
+
+  return (
+    <div>
+      <aside>
+        <Cart birds={birds} cart={cart} setCart={setCart} />
+        <Checkout setCart={setCart} />
+      </aside>
+      <main>
+        <Cards birds={birds} cart={cart} handleCart={handleCart} />
+      </main>
+    </div>
+  );
 }
+
 export default App;
