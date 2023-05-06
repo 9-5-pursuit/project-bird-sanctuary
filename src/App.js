@@ -25,45 +25,55 @@
 
 // export default App;
 
-import React, { useState } from "react";
-import Cart from "./components/Cart";
-import Checkout from "../components/Checkout";
-import BirdsContainer from "./components/BirdsContainer";
+// import React, { useState } from "react";
+// import Cart from "./components/Cart";
+// import Checkout from "../components/Checkout";
+// import BirdsContainer from "./components/BirdsContainer";
 
-import "./App.css";
+// import "./App.css";
 
-// App component
+// // App component
+// function App() {
+//   const [cartItems, setCartItems] = useState([]);
+
+//   function handleAddToCart(bird) {
+//     setCartItems([...cartItems, bird]);
+//   }
+
+//   function handleRemoveFromCart(index) {
+//     const updatedCartItems = [...cartItems];
+//     updatedCartItems.splice(index, 1);
+//     setCartItems(updatedCartItems);
+//   }
+
+//   function reset() {
+//     setCartItems([]);
+//   }
+
+//   return (
+//     <div className="container">
+//       <aside>
+//         <Cart
+//           cartItems={cartItems}
+//           handleRemoveFromCart={handleRemoveFromCart}
+//         />
+//         <Checkout reset={reset} />
+//       </aside>
+//       <main>
+//         <BirdsContainer handleAddToCart={handleAddToCart} />
+//       </main>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+   return(
+<div>Hello</div>
 
-  function handleAddToCart(bird) {
-    setCartItems([...cartItems, bird]);
-  }
-
-  function handleRemoveFromCart(index) {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems.splice(index, 1);
-    setCartItems(updatedCartItems);
-  }
-
-  function reset() {
-    setCartItems([]);
-  }
-
-  return (
-    <div className="container">
-      <aside>
-        <Cart
-          cartItems={cartItems}
-          handleRemoveFromCart={handleRemoveFromCart}
-        />
-        <Checkout reset={reset} />
-      </aside>
-      <main>
-        <BirdsContainer handleAddToCart={handleAddToCart} />
-      </main>
-    </div>
-  );
+  )
 }
-
 export default App;
