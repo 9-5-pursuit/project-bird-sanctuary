@@ -150,7 +150,42 @@
 //     </div>
 //   );
 // }
+import React from "react";
+import {useState} from "react";
 
-export default function Checkout() {
-  return <div>Hello</div>;
+
+const Checkout =({setCart}) =>{
+  const [fName, setFName] = useState("");
+  const [lName, setLName] = useState("");
+  const [email, setEmail] = useState("");
+  const [zipCode, setZipCode] = useState("");
+
+  const handleFNameChange = (e) => {
+    setFName(e.target.value);
+  };
+  const handleLNameChange = (e) => {
+    setLName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleZipCodeChange = (e) => {
+    setZipCode(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(fName && lName && email && zipCode){
+      alert("You have adopted birds. Thank You!");
+      setCart([])
+      setFName('')
+      setLName('')
+      setEmail('')
+      setZipCode('')
+    };
+  }
+  return(
+    <div
+  )
 }
+
+export default Checkout;
