@@ -22,7 +22,6 @@
 //   );
 // }
 import React from "react";
-import bonusItems from "../data/bonusItems";
 
 const Cards = ({ birds, handleCart }) => {
   return (
