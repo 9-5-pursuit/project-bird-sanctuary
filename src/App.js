@@ -1,60 +1,38 @@
-
-
-import React from "react";
-import "./App.css";
- import { useState } from "react"
-import birdData  from "./data/birds"
-import BirdCard from "./Components/BirdCard";
-import CheckOutForm from "./Components/CheckOutForm";
+import React, { useState } from "react";
 import Cart from "./Components/Cart";
+import CheckOutForm from "./Components/CheckOutForm";
+import BirdsContainer from "./Components/BirdsContainer";
 
+import "./App.css";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
 
-   const [newBirds, setnewBirds] = useState(birdData);
-  
-   
+  function handleAddBird(bird) {
+    setCartItems([...cartItems, bird]);
+  }
 
-   function handleAddBird(bird) {
-     setnewBirds([bird, ...newBirds]);
+  function removeFromCart(index) {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(index, 1);
+    setCartItems(updatedCartItems);
+  }
 
-      {
-        birdData.map(({ name, amount, id }) => {
-          return (
-            <div className="total">
-              <h4>Total $ {amount}</h4>
+  function reset() {
+    setCartItems([]);
+  }
 
-              <ol>
-                <li key={id}>{name}</li>
-              </ol>
-            </div>
-          );
-        });
-      }
-
-
-   }
-
-   function removeBird(birdID) {
-     const filteredBirdArray = newBirds.filter((bird) => bird.id === birdID);
-     setnewBirds(filteredBirdArray);
-   }
-
-  
   return (
-    <div className="App">
-      <header>
-        <h1>Bird Sanctuary Donation App</h1>
-      </header>
-
+    <div className="container">
       <aside>
-        <BirdCard handleAddBird={handleAddBird} />
-        <br />
-        <Cart newBirds={newBirds} removeBird={removeBird} /> <br />
-        <CheckOutForm />
+        <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+        <CheckOutForm reset={reset} />
       </aside>
+      <main>
+        <BirdsContainer handleAddBird={handleAddBird} />
+      </main>
     </div>
   );
-};
+}
 
 export default App;

@@ -1,25 +1,81 @@
+import React, { useState } from "react";
 
+// Checkout Component to Keep track of the information entered
 
+export default function CheckOutForm({ reset }) {
+    const [user, setUser] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        zip: "",
+    })
 
-export default function CheckOutForm() {
+//prevent the form to rest the default value
+  function handleSubmit(event) {
+    event.prevetDefault();
+     alert("You have adopted birds. Thank you!");
 
-      function handleSubmit(event) {
-        event.prevetDefault();
-      }
+     setUser({
+       firstName: "",
+       lastName: "",
+       email: "",
+       zip: "",
+     });
+
+     reset();
+  }
+  function resetFormCart(event) {
+    setUser({
+      ...user,
+      [event.target.id]: event.target.value,
+    });
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h4>Checkout</h4>
-      <label htmlFor="firstname">First Name</label>
-      <input type="text" id="firstname" />
-      <label htmlFor="firstname">Last Name</label>
-      <input type="text" id="lastname" />
-      <label htmlFor="firstname">Email</label>
-      <input type="email" id="email" />
-      <label htmlFor="firstname">Zip Code</label>
-      <input type="number" id="zipcode" />
-      <br />
-      <button onClick={() => false}>Submit</button>
-    </form>
+    <div className="Checkout">
+      <h2>Checkout</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
+        <input
+          id="firstname"
+          type="text"
+          name="firstName"
+          value={user.firstName}
+          // onChange={resetFormCart}
+          required
+        />
+
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          // value={user.lastName}
+          // onChange={resetFormCart}
+          required
+        />
+
+        <label htmlFor="email">Email</label>
+        <input
+          name="email"
+          type="email"
+          id="email"
+          // value={user.email}
+          // onChange={resetFormCart}
+          required
+        />
+
+        <label htmlFor="zipCode">Zip Code</label>
+        <input
+          type="number"
+          name="zipCode"
+          id="zipCode"
+          // value={user.zipcode}
+          // onChange={resetFormCart}
+          required
+        />
+        <input type="Submit" />
+      </form>
+    </div>
   );
 }

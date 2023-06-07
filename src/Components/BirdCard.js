@@ -1,24 +1,16 @@
-
- import  birdData  from "../data/birds"
+import React from "react";
  
-export default function BirdCard(handleAddBird) {
+export default function BirdCard({handleAddBird, bird}) {
   return (
-    <>
-      {birdData.map(({ name, amount, img }) => {
-        return (
-          <div className="card">
-            <label htmlFor="name">{name}</label>
+          <div className="card bird-card">
+            <p>{bird.name}</p>
             <br />
-            <label htmlFor="amount">Price ${amount}</label>
-            <img src={img} alt={name} />
+            <p>Price ${bird.amount}</p>
+            <img src={bird.img} alt={bird.name} />
             <br />
-            <button onClick={() => handleAddBird}>Adopt</button>
-            <br />
-            <br />
+          
+              <button onClick={() => handleAddBird(bird) }>Adopt</button>
           </div>
-        );
-      })}
-    </>
   );
 }
 
