@@ -11,8 +11,8 @@ export default function CheckOutForm({ reset }) {
     })
 
 //prevent the form to rest the default value
-  function handleSubmit(event) {
-    event.prevetDefault();
+  function handleSubmit() {
+    // event.prevetDefault();
      alert("You have adopted birds. Thank you!");
 
      setUser({
@@ -33,15 +33,15 @@ export default function CheckOutForm({ reset }) {
 
   return (
     <div className="Checkout">
-      <h2>Checkout</h2>
       <form onSubmit={handleSubmit}>
+        <h2>Checkout</h2>
         <label htmlFor="firstName">First Name</label>
         <input
-          id="firstname"
           type="text"
           name="firstName"
+          id="firstName"
           value={user.firstName}
-          // onChange={resetFormCart}
+          onChange={resetFormCart}
           required
         />
 
@@ -50,8 +50,8 @@ export default function CheckOutForm({ reset }) {
           type="text"
           name="lastName"
           id="lastName"
-          // value={user.lastName}
-          // onChange={resetFormCart}
+          value={user.lastName}
+          onChange={resetFormCart}
           required
         />
 
@@ -60,8 +60,8 @@ export default function CheckOutForm({ reset }) {
           name="email"
           type="email"
           id="email"
-          // value={user.email}
-          // onChange={resetFormCart}
+          value={user.email}
+          onChange={resetFormCart}
           required
         />
 
@@ -70,8 +70,8 @@ export default function CheckOutForm({ reset }) {
           type="number"
           name="zipCode"
           id="zipCode"
-          // value={user.zipcode}
-          // onChange={resetFormCart}
+          value={user.zipcode}
+          onChange={resetFormCart}
           required
         />
         <input type="Submit" />
