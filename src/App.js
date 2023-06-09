@@ -74,13 +74,9 @@ import Checkout from "./Components/Checkout";
 import Cards from "./Components/Card";
 import birdData from "./data/birds";
 
-
-
-
 // console.log(birdData)
 
 function App() {
-
   const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
 
@@ -92,8 +88,11 @@ function App() {
     setCart([...cart, bird]);
   };
 
+  function reset() {
+    setCart([]);
+  }
   return (
-    <div>
+    <div className="container">
       <aside>
         <Cart birds={birds} cart={cart} setCart={setCart} />
         <Checkout setCart={setCart} />

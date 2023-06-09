@@ -23,7 +23,7 @@
 // }
 import React from "react";
 
-const Cards = ({ birds, handleCart }) => {
+const Card = ({ birds, handleCart }) => {
   return (
     <div className="card">
       <ul>
@@ -33,7 +33,7 @@ const Cards = ({ birds, handleCart }) => {
               <li key={bird.id}>
                 <h3>{bird.name}</h3>
                 <p>Price: ${bird.amount}</p>
-                <img src={bird.img} alt="bird"></img>
+                <img src={bird.img} alt="birds"></img>
                 <button
                   className="birds
                    button"
@@ -52,4 +52,4 @@ const Cards = ({ birds, handleCart }) => {
     </div>
   );
 };
-export default Cards;
+export default Card;
