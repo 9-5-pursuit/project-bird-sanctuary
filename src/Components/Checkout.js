@@ -153,7 +153,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Checkout = ({ setCart }) => {
+const Checkout = ({ setCart, reset }) => {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [email, setEmail] = useState("");
@@ -173,6 +173,8 @@ const Checkout = ({ setCart }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    reset();
+
     if (fName && lName && email && zipCode) {
       alert("You have adopted birds. Thank You!");
       setCart([]);
@@ -180,6 +182,8 @@ const Checkout = ({ setCart }) => {
       setLName("");
       setEmail("");
       setZipCode("");
+
+      alert("The purchase was successful and cart is emptied");
     }
   };
   return (

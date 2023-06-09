@@ -90,12 +90,13 @@ function App() {
 
   function reset() {
     setCart([]);
+    
   }
   return (
     <div className="container">
       <aside>
         <Cart birds={birds} cart={cart} setCart={setCart} />
-        <Checkout setCart={setCart} />
+        <Checkout setCart={setCart} reset={reset} />
       </aside>
       <main>
         <Cards birds={birds} cart={cart} handleCart={handleCart} />
