@@ -1,6 +1,6 @@
 function Checkout({ handleSubmit, handleTextChange, checkout }) {
   return (
-    <div>
+    <div className="checkout">
       <>
         <form onSubmit={handleSubmit}>
           <h3>Checkout</h3>

@@ -4,6 +4,8 @@ import birdData from "./data/birds";
 import BirdsCard from "./Components/BirdsCard";
 import Cart from "./Components/Cart";
 
+import "./App.css";
+
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -28,27 +30,43 @@ function App() {
     });
   }
 
-  function handleAddAdoptCart(newBird) {
-    // birdData.filter((bird) => bird.id === cart.id);
-
-    setCart([...cart, newBird]);
+  function handleAddAdoptCart(bird) {
+    setCart([...cart, bird]);
 
     console.log(cart);
   }
+
+  function handleRemoveFromCart(birdId) {
+    setCart(cart.filter((bird) => bird.id !== birdId));
+  }
+
   function reset() {
     setCart([]);
+    setCheckout({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zip: "",
+    });
   }
 
   return (
-    <div>
-      <Cart cart={cart} />
-      <BirdsCard birdData={birdData} handleAddAdoptCart={handleAddAdoptCart} />
+    <div className="App">
+      <aside>
+        <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />
+        <Checkout
+          handleSubmit={handleSubmit}
+          handleTextChange={handleTextChange}
+          checkout={checkout}
+        />
+      </aside>
 
-      <Checkout
-        handleSubmit={handleSubmit}
-        handleTextChange={handleTextChange}
-        checkout={checkout}
-      />
+      <main>
+        <BirdsCard
+          birdData={birdData}
+          handleAddAdoptCart={handleAddAdoptCart}
+        />
+      </main>
     </div>
   );
 }
