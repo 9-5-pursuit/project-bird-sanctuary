@@ -1,0 +1,39 @@
+img {
+    width: 100px;
+}
+.birds {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    list-style: none;
+    text-align: center;
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: end;
+}
+.birds li {
+    border: 1px solid blue;
+}
+.bonus {
+    font-size: 20px;
+    font-weight: 700;
+}
+.main {
+    display: grid;
+    grid-template-areas:
+        "cart bird"
+        "checkout bird";
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+.bird {
+    grid-area: bird;
+}
+.cart {
+    grid-area: cart;
+}
+.checkout {
+    grid-area: checkout;
+}
